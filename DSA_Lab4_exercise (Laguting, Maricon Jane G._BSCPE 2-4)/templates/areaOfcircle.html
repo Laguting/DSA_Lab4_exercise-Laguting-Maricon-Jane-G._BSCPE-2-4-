@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Convert the Radius to get the Area of a Circle</title>
+    <link rel="icon" type="untitled design/png" href="https://imageshack.com/i/pnI0pvlyp">
+    <style>
+        h1{
+            font-size: 70px;
+            color: black;
+            padding-top:10px;
+            padding-left:530px;
+        }
+        body {
+            background-image: url("https://imageshack.com/i/poC3wFzJp");
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin: 0;
+        }
+        .circle-container {
+            text-align: center;
+            padding-top: 100px;
+            padding-left:10px; 
+        }
+
+        .input-label {
+            display: block;
+            font-size: 50px;
+            padding-top: 0px;
+            padding-left:10px; 
+        }
+        .input-box {
+            width: 300px; 
+            font-size: 20px;
+        }
+        .compute-button {
+            font-size: 20px; 
+        }
+        .work-link{
+            color: black;
+            font-size: 30px;
+            text-decoration: none;
+            position: absolute;
+            top: 560px;
+            left: 560px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Area of a Circle</h1>
+
+    <div class="circle-container">
+        <form action="/areaOfcircle" method="POST">
+            <label class="input-label" for="inputradius">Enter a radius:</label>
+            <br>
+            <input class="input-box" type="number" id="inputradius" name="inputradius" pattern="^[A-Za-z]+$" title="Please enter a valid string without strings" required>
+            <input class="compute-button" type="submit" value="Compute">
+            <dl><a class="work-link" href="http://127.0.0.1:5000/works">Back</a></dl>
+        </form>
+        {% if radius %}
+        <p><strong>Computed Area: </strong></p>
+        <p>{{ radius }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Convert to Uppercase</title>
+    <style>
+        h1{
+            font-size: 70px;
+            color: black;
+            padding-top:10px;
+            padding-left:330px;
+        }
+        body {
+            background-image: url("https://imageshack.com/i/poC3wFzJp");
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin: 0;
+        }
+        .form-container {
+            text-align: center;
+            padding-top: 100px;
+            padding-left:10px; 
+        }
+    
+        .input-label {
+            display: block;
+            font-size: 50px;
+            padding-top: 0px;
+            padding-left:10px; 
+        }
+        .input-box {
+            width: 300px; 
+            font-size: 20px;
+        }
+        .convert-button {
+            font-size: 20px; 
+        }
+        .work-link{
+            color: black;
+            font-size: 30px;
+            text-decoration: none;
+            position: absolute;
+            top: 560px;
+            left: 560px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Convert String to Uppercase</h1>
+
+    <div class="form-container">
+        <form action="/touppercase" method="POST">
+            <div class="input-container">
+                <label class="input-label" for="inputString">Enter a string:</label>
+                <br>
+                <input class="input-box" type="text" id="inputString" name="inputString" pattern="[^0-9]*" title="Please enter a valid string without numbers" required>
+                <input class="convert-button" type="submit" value="Convert">
+                <p><a class="work-link" href="http://127.0.0.1:5000/works">Back</a></p>
+            </div>   
+        </form>
+        {% if result %}
+        <p><strong>Converted String: </strong></p>
+        <p>{{ result }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Compute the Area of a Triangle</title>
+    <link rel="icon" type="untitled design/png" href="https://imageshack.com/i/pnI0pvlyp">
+    <style>
+        h1{
+            font-size: 70px;
+            color: black;
+            padding-top:10px;
+            padding-left:500px;
+        }
+        body {
+            background-image: url("https://imageshack.com/i/poC3wFzJp");
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin: 0;
+        }
+        .triangle-container {
+            text-align: center;
+            padding-top: 30px;
+            padding-left:10px; 
+        }
+
+        .base-label {
+            display: block;
+            font-size: 30px;
+            padding-top: 0px;
+            padding-left:10px; 
+        }
+        .base-box {
+            width: 300px; 
+            font-size: 20px;
+        }
+        .height-label {
+            display: block;
+            font-size: 30px;
+            padding-top: 0px;
+            padding-left:10px; 
+        }
+        .height-box {
+            width: 300px; 
+            font-size: 20px;
+        }
+        .compute-button {
+            font-size: 20px; 
+        }
+        .work-link{
+            color: black;
+            font-size: 30px;
+            text-decoration: none;
+            position: absolute;
+            top: 560px;
+            left: 560px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Area of a Triangle</h1>
+
+    <div class="triangle-container">
+        <form action="/areaOfTriangle" method="POST">
+            <label class="base-label" for="input_base">Enter the base of a triangle:</label>
+            <br> 
+            <input class="base-box" type="number" id="base" name="base" pattern="^[A-Za-z]+$" title="Please enter a valid string without strings" required>
+            <br> 
+            <br>
+            <label class="height-label" for=" input_height">Enter the height of a triangle:</label>
+            <br> 
+            <input class="height-box" type="number" id="height" name="height" pattern="^[A-Za-z]+$" title="Please enter a valid string without strings" required>
+            <input class="compute-button" type="submit" value="Calculate">
+            <dl><a class="work-link" href="http://127.0.0.1:5000/works">Back</a></dl>
+        </form>
+        {% if area_triangle %}
+        <p><strong>Computed Area: </strong></p>
+        <p>{{ area_triangle }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
